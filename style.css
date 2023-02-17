@@ -143,13 +143,18 @@ h2{
   margin: 20px 0px;
   gap: 0px;
   height: auto;
+  background-size: cover;
+  object-fit: fill;
+
 }
 .gallery-item {
   width: 20%;
   height: 150px;
   border: 1px solid black;
   display: block;
-  background: gray;
+  background: black;
+  background-size: cover;
+  object-fit: fill;
 }
 .mobile-ads {
   display: none;
@@ -212,5 +217,7 @@ h2{
   }
   .gallery-item {
   width: 50%;
+  background-size: cover;
+  object-fit: fill;
   }
 }

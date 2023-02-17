@@ -1,0 +1,215 @@
+
+* {
+  box-sizing: border-box;
+  font-family: "Open Sans", arial, sans-serif;
+
+}
+main, body, html {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0; 
+  <!--background: rba(0,0,0,0.5);-->
+  background: black;
+}
+
+a{
+
+	color: lightgrey;
+
+}
+
+p{
+
+	color: grey;
+
+}
+
+
+h2{
+	color: lightgrey;
+	text-decoration: none !important;
+
+}
+
+
+.flex {
+  display: flex;
+  gap: 20px;
+}
+.row { flex-direction: row; }
+.column { flex-direction: column; }
+.space-between { justify-content: space-between; }
+.space-around { justify-content: space-around; }
+.center { justify-content: center; }
+.middle { align-items: center; }
+.header {
+  position: relative;
+}
+.logo {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  text-decoration: none;
+  color: lightgrey;
+  border-color: lightgrey;
+}
+.menu {
+  background: orange;
+  padding: 20px;
+ }
+#menu-mobile {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  left:0;
+  top: 50%;
+  transform: translatey(-50%);  
+}
+#menu-mobile::after {
+  display: block;
+  padding: 20px;
+  content: '\2630';
+  align-items: flex-start;
+  text-align: right;
+}
+.menu-item {
+  padding: 10px;
+  <!--background: green;-->
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.menu-item:hover {
+  transform: scale(1.2);
+}
+/* Center content */
+
+.content {
+  position: relative;
+  margin: 0px auto;
+  left: 0;
+  right: 0;
+  background: #202020;
+  height: 20px;
+  max-width: 800px;
+  height: auto;
+}
+.banner {
+  width: 100%;
+  height: 200px;
+  display: block;
+  background: teal;
+  margin-bottom: 20px;
+  background: url(' ./assets/rosette.webp    ');
+  object-fit: fill;
+  <!--object-position: -->
+
+}
+.square {
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.square-item {
+  
+  color: lightgrey;
+  height: 300px;
+  flex-basis: 40%;
+  flex-grow: 1;
+  flex-direction: column;
+  text-align: center;
+  background: black;
+}
+.square-item:nth-of-type(even) {
+  flex-direction: column-reverse;
+}
+
+.thumbnail {
+  display: block;
+  width: 100%;
+  height: 50%;
+  background: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 200px;
+  background: purple;
+  margin: 20px 0px;
+  gap: 0px;
+  height: auto;
+}
+.gallery-item {
+  width: 20%;
+  height: 150px;
+  border: 1px solid black;
+  display: block;
+  background: gray;
+}
+.mobile-ads {
+  display: none;
+  width: 100%;
+  height: 180px;
+  background: green;
+}
+.ads {
+  position: fixed;
+  top: 50%;
+  transform: translatey(-50%);
+  height: 500px;
+  width: 200px;
+  <!--background: green;-->
+
+  background: url('./assets/rosette.webp');
+  object-fit: scale-down;
+
+
+
+}
+.ads-left {
+   left: 40px;
+}
+.ads-right {
+  right: 40px;
+}
+@media screen and (max-width: 1200px) {
+  .ads {
+    display: none;
+  }
+  .mobile-ads {
+    display: block;
+  }
+  .square-item {
+  flex-basis: 100%;
+  }
+  #menu-mobile {
+    display: block;
+  }
+  .menu {
+    display: none;
+  }
+  .menu-content {
+    flex-direction: column;
+    gap: 4px;
+    text-align: 100%;
+    width: 100%;
+
+
+	text-decoration: none !important;
+    align: relative;
+
+  }
+  .menu-item:hover {
+    transform: scale(1);
+  }
+  .visible {
+    display: block;
+  }
+  .gallery-item {
+  width: 50%;
+  }
+}
